@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>KDA | Report Bullying</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="King David Academy logo" class="site-logo">
+            <div class="logo-controls" style="display:inline-flex; align-items:center; gap:8px; margin-left:12px;">
+                <input id="logo-file" type="file" accept="image/*" style="padding:4px;">
+                <button id="logo-save" type="button" disabled style="padding:6px 8px; border-radius:6px; background:#0a74da; color:white; border:none;">Save Logo</button>
+                <button id="logo-remove" type="button" style="padding:6px 8px; border-radius:6px; background:#eee; border:1px solid #ccc;">Remove</button>
+                <img id="logo-preview" alt="Logo preview" style="display:none; width:64px; height:auto; border-radius:6px;">
+            </div>
+        </div>
+        <h1>KDA Centralized Achievement Showcase</h1>
+        <nav>
+            <a href="index.html#students">Student Profiles</a> 
+            <a href="index.html#about">About</a>
+            <a href="#">Report Bullying</a> </nav>
+        <div class="search-wrap">
+            <form id="search-form" role="search">
+                <input id="search-input" type="search" placeholder="Search students by name..." aria-label="Search students">
+                <button type="submit">Search</button>
+            </form>
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+        <div class="header-actions">
+            <a class="sports-btn" href="sports.html">Sports</a>
+            <a class="sports-btn" href="feed.html">Feed</a>
+            <a class="academics-btn" href="academics.html">Academics</a>
+            <a class="report-btn" href="report.html" style="background-color: #ff3333;">Report Bullying</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="report-bullying">
+            <h2>Report a Case of Bullying (Confidential)</h2>
+            <form id="bullying-report-form">
+                <p style="color: #ffcccc;">**All reports are handled with the utmost confidentiality. Please provide as much detail as possible.**</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <label for="reporter-name" style="display: block; margin-bottom: 5px; color: #e0e0e0;">Your Name (Optional, but recommended for follow-up):</label>
+                    <input type="text" id="reporter-name" name="reporter-name" style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label for="victim-name" style="display: block; margin-bottom: 5px; color: #e0e0e0;">Name of Student Being Bullied:</label>
+                    <input type="text" id="victim-name" name="victim-name" required style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label for="bully-name" style="display: block; margin-bottom: 5px; color: #e0e0e0;">Name(s) of Student(s) Involved in Bullying:</label>
+                    <input type="text" id="bully-name" name="bully-name" required style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label for="incident-details" style="display: block; margin-bottom: 5px; color: #e0e0e0;">Details of the Incident (What, Where, When):</label>
+                    <textarea id="incident-details" name="incident-details" rows="5" required style="width: 100%; padding: 10px; box-sizing: border-box; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" style="width: 100%; padding: 12px; background: #da0a0a; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s;">Submit Confidential Report</button>
+            </form>
+            <p id="report-message" style="margin-top: 15px; font-size: 0.9em; text-align: center; color: #90caf9;"></p>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025-2026 promo KDA Achievement Showcase. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Academics - KDA Achievement Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="King David Academy logo" class="site-logo">
+        </div>
+        <h1>Academics</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+        </nav>
+        <div class="header-actions">
+            <a class="sports-btn" href="sports.html">Sports</a>
+            <a class="sports-btn" href="feed.html">Feed</a>
+            <a class="academics-btn" href="academics.html">Academics</a>
+        </div>
+    </header>
+    <main>
+        <section class="academics-section">
+            <h2>Academic Highlights</h2>
+            <p class="muted">Record student scores here and see top performers and class statistics.</p>
+
+            <div class="academics-controls" style="margin-top:12px;">
+                <form id="score-form">
+                    <label for="score-student">Student name</label>
+                    <!-- allow either a text input or, if profile cards exist, this can be a select populated by script -->
+                    <input id="score-student" type="text" placeholder="Student full name" style="margin-right:8px; padding:8px; border-radius:6px; border:1px solid #ccc;">
+
+                    <label for="score-class">Class</label>
+                    <input id="score-class" type="text" placeholder="e.g. 10A" style="margin-right:8px; padding:8px; border-radius:6px; border:1px solid #ccc; width:80px;">
+
+                    <label for="score-value">Score</label>
+                    <input id="score-value" type="number" step="0.01" placeholder="e.g. 87.5" style="margin-right:8px; padding:8px; border-radius:6px; border:1px solid #ccc; width:100px;">
+
+                    <button type="submit" style="padding:8px 12px; border-radius:6px; background:#0a74da; color:white; border:none;">Add Score</button>
+                </form>
+            </div>
+
+            <div class="academics-summary" style="margin-top:18px; display:flex; gap:24px; flex-wrap:wrap;">
+                <div style="min-width:240px;">
+                    <h3>Top performers (overall)</h3>
+                    <ol id="top-performers"></ol>
+                </div>
+                <div style="min-width:240px;">
+                    <h3>Class averages</h3>
+                    <ul id="class-averages"></ul>
+                </div>
+                <div style="min-width:260px;">
+                    <h3>Best scorer per class</h3>
+                    <ul id="class-best-scorers"></ul>
+                </div>
+            </div>
+
+            <div class="academics-updates" style="margin-top:28px; max-width:860px;">
+                <h3>Post an update</h3>
+                <form id="update-form" style="display:flex; gap:8px; align-items:flex-start;">
+                    <textarea id="update-text" rows="3" placeholder="Write an announcement or update for Academics..." style="flex:1; padding:8px; border-radius:6px; border:1px solid #ccc;"></textarea>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <button id="update-post" type="submit" style="padding:8px 12px; border-radius:6px; background:#ff7a59; color:white; border:none;">Post</button>
+                        <button id="update-clear" type="button" style="padding:8px 12px; border-radius:6px; background:#eee; border:none;">Clear</button>
+                    </div>
+                </form>
+
+                <div style="margin-top:12px;">
+                    <h4>Recent updates</h4>
+                    <ul id="updates-list" style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025-2026 promo KDA Achievement Showcase. All rights reserved.</p>
+    </footer>
+</body>
+</html>

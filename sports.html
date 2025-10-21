@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KDA Sports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <img src="logo.png" alt="King David Academy logo" class="site-logo">
+    </div>
+    <h1>KDA Sports</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Sports</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="sports-section">
+      <h2>Sports at KDA</h2>
+      <p class="muted">Available sports: Football, Volleyball, Basketball, Swimming</p>
+
+      <div class="sports-controls">
+        <form id="add-player-form">
+          <input id="player-name" placeholder="Player name" required>
+          <input id="player-class" placeholder="Class (e.g. 10A)" required>
+          <select id="player-sport" required>
+            <option value="football">Football</option>
+            <option value="volleyball">Volleyball</option>
+            <option value="basketball">Basketball</option>
+            <option value="swimming">Swimming</option>
+          </select>
+          <button type="submit">Add Player</button>
+        </form>
+      </div>
+      
+      <div class="class-filter-controls" style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 6px;">
+        <h3>Filter Players by Class</h3>
+        <input id="filter-class-input" placeholder="Enter Class (e.g. 10A)" style="padding: 8px; margin-right: 10px;">
+        <button id="filter-class-button">Show Players</button>
+        <button id="show-all-button">Show All</button>
+      </div>
+
+      <div id="class-filtered-lists" class="sports-lists" style="margin-top: 20px;">
+        </div>
+      <div id="sports-lists" class="sports-lists">
+        </div>
+
+      <div id="best-class" class="best-class">
+        <h3>Best Class (most players)</h3>
+        <div id="best-class-content">Calculating...</div>
+        <button id="best-refresh">Refresh</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; KDA Sports</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

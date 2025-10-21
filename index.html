@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>KDA Achievement Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="logo.png" alt="King David Academy logo" class="site-logo">
+            <div class="logo-controls" style="display:inline-flex; align-items:center; gap:8px; margin-left:12px;">
+                <input id="logo-file" type="file" accept="image/*" style="padding:4px;">
+                <button id="logo-save" type="button" disabled style="padding:6px 8px; border-radius:6px; background:#0a74da; color:white; border:none;">Save Logo</button>
+                <button id="logo-remove" type="button" style="padding:6px 8px; border-radius:6px; background:#eee; border:1px solid #ccc;">Remove</button>
+                <img id="logo-preview" alt="Logo preview" style="display:none; width:64px; height:auto; border-radius:6px;">
+            </div>
+        </div>
+        <h1>KDA Centralized Achievement Showcase</h1>
+        <nav>
+            <a href="#students">Student Profiles</a> 
+            <a href="#about">About</a>
+        </nav>
+        <div class="search-wrap">
+            <form id="search-form" role="search">
+                <input id="search-input" type="search" placeholder="Search students by name..." aria-label="Search students">
+                <button type="submit">Search</button>
+            </form>
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+        
+        <div class="header-actions">
+            <a class="sports-btn" href="sports.html">Sports</a>
+            <a class="sports-btn" href="feed.html">Feed</a>
+            <a class="academics-btn" href="academics.html">Academics</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About the Platform</h2>
+            <p>
+                Welcome to KDA's secure, scalable web platform. Every student has a mandatory, permanent, dedicated profile page to display their verified achievements.
+            </p>
+        </section>
+
+        <section id="students">
+            <h2>Student Achievement Profiles</h2>
+            <div id="top-achiever" class="top-achiever">
+                <div class="top-inner">
+                    <h3>Top Achiever</h3>
+                    <div class="top-content">Calculating...</div>
+                    <button id="top-refresh">Refresh</button>
+                </div>
+            </div>
+
+            <div class="profiles-container">
+                
+                <div id="add-student-box" class="sidebar-box">
+                    <h3>➕ New Student Profile</h3>
+                    <form id="add-student-form">
+                        
+                        <div style="margin-bottom: 10px; text-align: center;">
+                            <img id="student-photo-preview" alt="Photo Preview" 
+                                 style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 5px; border: 1px solid #ccc; display: none;">
+                            <label for="student-photo" style="display: block; margin-bottom: 3px; font-size: 0.9em;">Profile Picture:</label>
+                            <input type="file" id="student-photo" name="student-photo" accept="image/*" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid #ccc;">
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <label for="student-name" style="display: block; margin-bottom: 3px; font-size: 0.9em;">Name:</label>
+                            <input type="text" id="student-name" name="student-name" required style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid #ccc;">
+                        </div>
+                        
+                        <div style="margin-bottom: 10px;">
+                            <label for="student-class" style="display: block; margin-bottom: 3px; font-size: 0.9em;">Class/Grade:</label>
+                            <input type="text" id="student-class" name="student-class" required style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid #ccc;">
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <label for="student-achievements" style="display: block; margin-bottom: 3px; font-size: 0.9em;">Achievements:</label>
+                            <textarea id="student-achievements" name="student-achievements" rows="2" required style="width: 100%; padding: 6px; box-sizing: border-box; resize: vertical; border: 1px solid #ccc;"></textarea>
+                        </div>
+                        <button type="submit" style="width: 100%; padding: 8px; background: #0a74da; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Add Student</button>
+                    </form>
+                    <p id="add-student-message" style="margin-top: 10px; font-size: 0.85em; text-align: center;"></p>
+                </div>
+                
+                <div class="profiles">
+                    <div class="profile-card">
+                        <img src="student1.jpg" alt="Student Photo" 
+                             style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+                        <h3>ntsinzi davis</h3>
+                        <p class="student-class">BTEC G11 IT A</p>
+                        <p>Verified Successes:</p>
+                        <ul>
+                            <li>ALTHELETE</li>
+                            <li>good performer</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="upload-section" class="upload-section">
+                </div>
+                <div class="preview-area">
+                    <img id="image-preview" alt="Image preview" src="" style="display:none;">
+                </div>
+                <div class="progress-wrap" style="display:none;">
+                    <progress id="upload-progress" value="0" max="100"></progress>
+                    <span id="upload-status"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="report-action-area">
+            <a class="report-btn" href="bully.html" id="report-link">🚨 Report Bullying</a>
+        </div>
+        <p>&copy; 2025-2026 promo KDA Achievement Showcase. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reportLink = document.getElementById('report-link');
+            const password = 'KDA';
+
+            if (reportLink) {
+                reportLink.style.display = 'none';
+
+                document.querySelector('.report-action-area').addEventListener('click', function(event) {
+                    if (reportLink.style.display !== 'none') {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    const enteredPassword = prompt('This area is restricted. Please enter the password to view reports:');
+                    
+                    if (enteredPassword === password) {
+                        reportLink.style.display = 'inline-block';
+                        alert('Password correct. The "Report Bullying" link is now visible. Please click it again to proceed.');
+                    } else if (enteredPassword !== null) {
+                        alert('Incorrect password. Access denied.');
+                    }
+                });
+
+                const accessButton = document.createElement('button');
+                accessButton.textContent = '🚨 View Reports (Restricted)';
+                accessButton.className = 'report-btn';
+                accessButton.style.cursor = 'pointer';
+                
+                reportLink.parentNode.prepend(accessButton);
+                
+                accessButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    document.querySelector('.report-action-area').click();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+/*
+====================================
+  PROFESSIONAL DARK THEME STYLES (WITH BLURRED BACKGROUND IMAGE)
+====================================
+*/
+
+/* 1. Global Reset and Base */
+body {
+    /* Base setup */
+    color: #e0e0e0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    
+    /* FALLBACK: Solid dark color for non-image parts */
+    background-color: #121212; 
+    position: relative; 
+}
+
+/* Semi-transparent Dark and Blurred Image Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 🌟 CHANGE 1: Apply the Image, size, and position here 🌟 */
+    background-image: url('kda.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    /* 🌟 CHANGE 2: Add the blur effect 🌟 */
+    filter: blur(4px); 
+    
+    /* Dark color overlay for readability (85% opacity) */
+    background-color: rgba(0, 0, 0, 0.85); 
+    z-index: -1; 
+}
+
+/* 2. Header and Navigation (Backgrounds adjusted to be slightly opaque) */
+header {
+    background-color: rgba(31, 31, 31, 0.95); 
+    color: #ffffff;
+    padding: 15px 5%;
+    border-bottom: 3px solid #0a74da; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+nav a {
+    color: #90caf9; 
+    text-decoration: none;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #0a74da; 
+    color: #ffffff;
+}
+
+.header-actions a {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #0a74da;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.header-actions a:hover {
+    background-color: #0a74da;
+    border-color: #ffffff;
+}
+
+.search-wrap {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+#search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #555555;
+    background-color: #333333;
+    color: #e0e0e0;
+    border-radius: 4px 0 0 4px;
+}
+#search-form button {
+    background-color: #0a74da;
+    color: white;
+    border: 1px solid #0a74da;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+#search-form button:hover {
+    background-color: #0d83ed;
+}
+
+
+/* 3. Main Content Sections */
+main {
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    /* Semi-transparent dark background for sections to stand out */
+    background-color: rgba(30, 30, 30, 0.9); 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+    color: #90caf9; 
+    border-bottom: 2px solid #333333;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* 4. Forms and Inputs (Add Student Profile) */
+.sidebar-box {
+    background-color: rgba(36, 36, 36, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.sidebar-box h3 {
+    color: #ffffff;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="file"],
+textarea {
+    background-color: #333333;
+    color: #e0e0e0;
+    border: 1px solid #555555;
+    padding: 8px;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #0a74da; 
+    background-color: #3a3a3a;
+    outline: none;
+}
+
+
+/* 5. Student Profile Cards and Layout */
+.profiles-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.profiles {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.profile-card {
+    background-color: rgba(36, 36, 36, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(10, 116, 218, 0.3);
+}
+
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0a74da;
+    margin-bottom: 10px;
+}
+
+.profile-card h3 {
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.profile-card p {
+    color: #ccc;
+}
+
+.profile-card ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.profile-card li {
+    background: #333333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    border-left: 3px solid #0a74da;
+}
+
+/* Top Achiever Box */
+#top-achiever {
+    background-color: #0a74da; 
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(10, 116, 218, 0.7);
+}
+
+#top-achiever h3 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+#top-refresh {
+    background-color: #ffffff;
+    color: #0a74da;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#top-refresh:hover {
+    background-color: #eee;
+}
+
+/* 6. Footer */
+footer {
+    background-color: rgba(31, 31, 31, 0.95);
+    color: #888888;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    border-top: 1px solid #333333;
+}
+/*
+====================================
+  NEW: BULLYING REPORT STYLES
+====================================
+*/
+
+/* Style for the new Report Bullying button in the header actions */
+.header-actions .report-btn {
+    /* Uses a red tone to signify importance/alert */
+    background-color: #a00a0a; /* Darker red */
+    color: #ffffff;
+    border: 1px solid #da0a0a; /* Brighter red border */
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-left: 10px; /* Space it out from other buttons */
+}
+
+.header-actions .report-btn:hover {
+    background-color: #da0a0a; /* Brighter red on hover */
+    border-color: #ffffff;
+}
+
+/* Style for the Report Section itself, similar to other sections */
+#report-bullying {
+    background-color: rgba(40, 20, 20, 0.9); /* Slightly reddish-dark background */
+    border: 1px solid #a00a0a;
+}
+
+#report-bullying h2 {
+    color: #ff9999; /* Light red/pink for the title */
+}
+
+/* Style the form inputs for consistency (already handled by your existing input selectors, but good to check) */
+#bullying-report-form input[type="text"],
+#bullying-report-form textarea {
+    background-color: #333333;
+    color: #e0e0e0;
+    border: 1px solid #555555;
+    padding: 8px;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+#bullying-report-form input:focus,
+#bullying-report-form textarea:focus {
+    border-color: #da0a0a; /* Focus border color to match the report theme */
+    background-color: #3a3a3a;
+    outline: none;
+}
